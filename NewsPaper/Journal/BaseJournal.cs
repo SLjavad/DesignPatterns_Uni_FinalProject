@@ -39,6 +39,11 @@ namespace NewsPaper.Journal
 
         public void Subscribe(Subscriber.Subscriber subscriber)
         {
+            if (subscribers.Any(x => x.Id == subscriber.Id))
+            {
+                Console.WriteLine("this person has been subscribed before");
+                return;
+            }
             SubscriberInfo subscriberInfo = new SubscriberAdapter(subscriber).Convert();
             subscribers.Add(subscriberInfo);
 
