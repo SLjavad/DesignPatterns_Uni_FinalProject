@@ -42,7 +42,7 @@ namespace NewsPaper.Journal
             SubscriberInfo subscriberInfo = new SubscriberAdapter(subscriber).Convert();
             subscribers.Add(subscriberInfo);
 
-            subscriberInfo.ToString();
+            Console.WriteLine(subscriberInfo.ToString());
         }
 
         public void Unsubscribe(Subscriber.Subscriber subscriber)

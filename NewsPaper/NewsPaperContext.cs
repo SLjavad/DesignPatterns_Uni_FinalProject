@@ -154,10 +154,12 @@ namespace NewsPaper
         {
             BaseJournal journal = journals.Find(j => j.Name == journalName.Trim().ToLowerInvariant());
 
-            foreach (SubscriberInfo subscriber in journal.subscribers)
-            {
-                journal.CurrentState.Publish(subscriber, statusNotif, journal.PublishStrategy);
-            }
+            journal.SendJournalToSubscribers(statusNotif);
+            
+            //foreach (SubscriberInfo subscriber in journal.subscribers)
+            //{
+            //    journal.CurrentState.Publish(subscriber, statusNotif, journal.PublishStrategy);
+            //}
         }
 
         public void SetPublishingMode(string journalName , string publishMode)
