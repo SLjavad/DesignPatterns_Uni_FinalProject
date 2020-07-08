@@ -11,13 +11,13 @@ namespace NewsPaper.Journal
     {
         public int Id { get; set; }
         public string FullName { get; set; }
-        public DateTime BirthDate { get; set; }
-        public GenderType Gender { get; set; }
+        public string BirthDate { get; set; }
+        public int Gender { get; set; }
         public string Status { get; set; }
 
         public override string ToString()
         {
-            return $"Fullname : {FullName}\nBirthDate : {BirthDate.ToString()}\nGender : {Gender}\nStatus : {Status}";
+            return $"Fullname : {FullName}\nBirthDate : {BirthDate}\nGender : {Gender}\nStatus : {Status}";
         }
     }
 }

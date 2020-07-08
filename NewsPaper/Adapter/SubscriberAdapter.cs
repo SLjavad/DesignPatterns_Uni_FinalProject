@@ -8,22 +8,18 @@ using System.Threading.Tasks;
 
 namespace NewsPaper.Adapter
 {
-    public class SubscriberAdapter : SubscriberInfo
+    public class SubscriberAdapter : ITarget
     {
-        private readonly Subscriber.Subscriber subscriber;
+        private readonly AdapteeService adaptee;
 
-        public SubscriberAdapter(Subscriber.Subscriber subscriber)
+        public SubscriberAdapter(AdapteeService adaptee)
         {
-            this.subscriber = subscriber;
+            this.adaptee = adaptee;
         }
 
-        public SubscriberInfo Convert()
+        public SubscriberInfo Convert(PersonalInformation personalInformation , int id)
         {
-            this.FullName = subscriber.personalInformation.Name + " " + subscriber.personalInformation.Family;
-            this.BirthDate = DateTime.Parse(subscriber.personalInformation.BirthDate);
-            this.Gender = subscriber.personalInformation.Gender;
-            this.Id = subscriber.Id;
-            return this;
+            return adaptee.Convert(personalInformation, id);
         }
     }
 }

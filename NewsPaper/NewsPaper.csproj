@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter\AdapteeService.cs" />
+    <Compile Include="Adapter\ITarget.cs" />
     <Compile Include="Adapter\SubscriberAdapter.cs" />
     <Compile Include="Constants\Commands.cs" />
     <Compile Include="Journal\BaseJournal.cs" />

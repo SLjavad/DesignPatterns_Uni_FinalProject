@@ -16,6 +16,7 @@ namespace NewsPaper.Journal
         {
             PublishStrategy = new CourierDelivery();
             CurrentState = new Editing();
+            AdapterTarget = new SubscriberAdapter(new AdapteeService());
 
             subscribers = new List<SubscriberInfo>();
         }
@@ -26,6 +27,7 @@ namespace NewsPaper.Journal
         public string Head { get; protected set; }
         public BaseState CurrentState { get; protected set; }
         public BasePublishStrategy PublishStrategy { get; protected set; }
+        public ITarget AdapterTarget { get; set; }
         public void SetState(BaseState baseState)
         {
             CurrentState = baseState;
@@ -44,7 +46,7 @@ namespace NewsPaper.Journal
                 Console.WriteLine("this person has been subscribed before");
                 return;
             }
-            SubscriberInfo subscriberInfo = new SubscriberAdapter(subscriber).Convert();
+            SubscriberInfo subscriberInfo = AdapterTarget.Convert(subscriber.personalInformation, subscriber.Id);
             subscribers.Add(subscriberInfo);
 
             Console.WriteLine(subscriberInfo.ToString());

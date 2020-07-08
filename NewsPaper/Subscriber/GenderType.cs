@@ -8,7 +8,7 @@ namespace NewsPaper.Subscriber
 {
     public enum GenderType
     {
-        Male,
+        Male = 1,
         Female
     }
 }

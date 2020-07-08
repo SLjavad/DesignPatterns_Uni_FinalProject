@@ -13,6 +13,9 @@ namespace NewsPaper.PublishStrategy
         {
             subscriber.Status = statusNotif;
             Console.WriteLine($"Curier : character {subscriber.Id} got the notif");
+            Console.WriteLine();
+            Console.WriteLine(subscriber.ToString());
+
         }
     }
 }
