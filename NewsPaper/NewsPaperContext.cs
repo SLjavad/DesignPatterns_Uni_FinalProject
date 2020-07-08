@@ -182,5 +182,15 @@ namespace NewsPaper
                     break;
             }
         }
+
+        public void CheckSubscribersStatus(string journalName)
+        {
+            BaseJournal journal = journals.Find(j => j.Name == journalName.Trim().ToLowerInvariant());
+
+            foreach (SubscriberInfo subscriber in journal.subscribers)
+            {
+                Console.WriteLine($"{subscriber.FullName} Status is ==> {subscriber.Status}");
+            }
+        }
     }
 }

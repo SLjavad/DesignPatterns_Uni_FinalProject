@@ -95,6 +95,11 @@ namespace NewsPaper
                             newsPaperContext.SetPublishingMode(splittedInput[1],splittedInput[2]);
                             break;
                         }
+                    case Commands.CHECK_SUBSCRIBER_STATUS:
+                        {
+                            newsPaperContext.CheckSubscribersStatus(splittedInput[1]);
+                            break;
+                        }
                     default:
                         break;
                 }

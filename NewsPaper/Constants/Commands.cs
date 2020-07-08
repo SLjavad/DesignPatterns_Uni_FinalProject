@@ -22,5 +22,6 @@ namespace NewsPaper.Constants
         public const string START_PUBLISHING = "/startpublishing";
         public const string PUBLISH = "/publish";
         public const string SET_PUBLISHING_METHOD = "/setpublishingmethod";
+        public const string CHECK_SUBSCRIBER_STATUS = "/checksubscriberstatus";
     }
 }
